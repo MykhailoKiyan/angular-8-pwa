@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it(`should display 'Angular eight PWA'`, () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Angular eight PWA');
+    expect(page.getTitleText()).toEqual('Angular 8 PWA');
   });
 
   afterEach(async () => {

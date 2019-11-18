@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  application: {
+    name: 'Angular 8 PWA',
+    angular: 'Angular 8.2.14',
+    bootstrap: 'Bootstrap 4.3.1'
+  }
 };
 
 /*
