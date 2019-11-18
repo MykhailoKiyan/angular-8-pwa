@@ -3,14 +3,24 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './modules/general/home/home.component';
 import { NotFoundComponent } from './modules/general/not-found/not-found.component';
-import { AboutComponent } from './modules/general/about/about.component';
-import { ContactComponent } from './modules/general/contact/contact.component';
+
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'about', component: AboutComponent },
-  { path: '**', component: NotFoundComponent }
+  {
+    path: '',
+    component: HomeComponent
+  }, {
+    path: 'contact',
+    loadChildren: () => import ('./modules/general/contact/contact.module')
+      .then(m => m.ContactModule)
+  }, {
+    path: 'about',
+    loadChildren: () => import('./modules/general/about/about.module')
+      .then(m => m.AboutModule)
+  }, {
+    path: '**',
+    component: NotFoundComponent
+  }
 ];
 
 @NgModule({
