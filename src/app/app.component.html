@@ -1,1 +1,18 @@
-<p>Modificated!!!!</p>
+<header>
+  <section>
+    <h1>{{ title }}</h1>
+    <p> (Angular 8.2.14 PWA) </p>
+  </section>
+  <nav>
+    <ul>
+      <li><a routerLink='/' routerLinkActive="router-link-active" >Home</a></li>
+      <li><a routerLink='/about'>About</a></li>
+      <li><a routerLink='/contact'>Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
