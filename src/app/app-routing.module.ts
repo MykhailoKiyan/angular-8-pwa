@@ -10,6 +10,10 @@ const routes: Routes = [
     path: '',
     component: HomeComponent
   }, {
+    path: 'items',
+    loadChildren: () => import('./modules/application/items/items.module')
+      .then(m => m.ItemsModule)
+  }, {
     path: 'contact',
     loadChildren: () => import ('./modules/general/contact/contact.module')
       .then(m => m.ContactModule)
