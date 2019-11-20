@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 import { environment } from '../../../../environments/environment';
 
@@ -12,7 +13,19 @@ export class HomeComponent implements OnInit {
   angular = environment.application.angular;
   bootstrap = environment.application.bootstrap;
 
-  constructor() { }
+  constructor(
+    private meta: Meta,
+    private titleService: Title) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.titleService.setTitle('angular.ganata: Progressive Web Application by Angular 8');
+    this.meta.addTag({
+      name: 'angular.eight.pwa',
+      content: 'Demo Angular 8 PWA'
+    });
+    this.meta.updateTag({
+      name: 'description',
+      content: 'This application was created by Angular version 8.2.14 just for demo'
+    });
+  }
 }
